@@ -51,9 +51,9 @@ Seed 3, default parameters (a 1.2 kg quad, sensor noise typical of cheap hobby h
 | Flight | Result |
 |---|---|
 | Figure of eight, 3.5 m/s, 3 m/s² sideways | 0.10 m rms from the reference, tilts up to 29 degrees |
-| 3 m step | 10 cm overshoot, 90 % in 1.3 s, settled in 1.4 s |
-| 6 m/s gust plus turbulence | pushed about 0.25 m, back on station within seconds |
-| One motor drops to 55 % thrust | stays within 0.3 m and never loses height |
+| 3 m step | 14 cm overshoot, 90 % of the step in 1.3 s, within 5 % after 1.4 s |
+| 6 m/s gust plus turbulence | pushed up to 0.43 m, back within 10 cm by the end of the run |
+| One motor drops to 55 % thrust | stays within 0.31 m and never drops below 1.3 m |
 | Attitude estimate | about 0.3 degrees rms in flight |
 | Position estimate | about 6 cm rms with 25 cm GPS noise |
 
