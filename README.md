@@ -8,13 +8,7 @@ I built it to learn how a flight stack fits together, and to be able to answer "
 
 ## What happens in a flight
 
-```
- physics (1 kHz)            sensors                 estimator              controller (250 Hz)
- ---------------     gyro, accelerometer (250 Hz)   ---------------        -------------------
- rigid body, four -->  GPS (10 Hz), barometer   --> error-state       -->   position -> velocity ->
- lagged motors,        (25 Hz), compass (25 Hz)     Kalman filter          acceleration -> attitude ->
- drag, wind                                         (15 states)            body rates -> mixer
-```
+The physics runs at 1 kHz: a rigid body with four lagged motors, quadratic drag and wind. The sensors sample it at their own rates, gyro and accelerometer at 250 Hz, GPS at 10 Hz, barometer and compass at 25 Hz, each with noise and bias. A 15-state error-state Kalman filter turns those into a position, velocity and attitude estimate. The controller runs at 250 Hz and is a cascade: position error gives a wanted velocity, that gives a wanted acceleration, that gives a wanted attitude, that gives body rates, and the mixer turns body rates into four motor commands.
 
 | Part | File | In short |
 |---|---|---|
